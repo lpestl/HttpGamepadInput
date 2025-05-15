@@ -4,5 +4,50 @@
              xmlns:viewModels="clr-namespace:HttpGamepadInput.ViewModels"
              x:Class="HttpGamepadInput.Views.MainPage"
              x:DataType="viewModels:GamepadViewModel">
+    
+    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" HorizontalOptions="Center" ColumnSpacing="30">
 
+        <!-- D-Pad -->
+        <Grid Row="0" Column="0" WidthRequest="80" HeightRequest="80">
+            <BoxView Color="Gray" WidthRequest="20" HeightRequest="60" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <BoxView Color="Gray" WidthRequest="60" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+
+        <!-- Select/Start -->
+        <Grid Row="0" Column="1" ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Label Text="SELECT" TextColor="Red" FontSize="10" HorizontalTextAlignment="Center"/>
+                <BoxView Color="DarkGray" WidthRequest="40" HeightRequest="20" CornerRadius="4"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                <Label Text="START" TextColor="Red" FontSize="10" HorizontalTextAlignment="Center"/>
+                <BoxView Color="DarkGray" WidthRequest="40" HeightRequest="20" CornerRadius="4"/>
+            </VerticalStackLayout>
+        </Grid>
+
+        <!-- A / B Buttons -->
+        <Grid Row="0" Column="2" ColumnSpacing="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- B Button -->
+            <VerticalStackLayout HorizontalOptions="Center">
+                <Ellipse WidthRequest="40" HeightRequest="40" Fill="Red"/>
+                <Label Text="B" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+
+            <!-- A Button -->
+            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
+                <Ellipse WidthRequest="40" HeightRequest="40" Fill="Red"/>
+                <Label Text="A" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+        </Grid>
+
+    </Grid>
 </ContentPage>
