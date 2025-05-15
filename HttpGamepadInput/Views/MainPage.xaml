@@ -5,7 +5,7 @@
              x:Class="HttpGamepadInput.Views.MainPage"
              Background="White"
              x:DataType="viewModels:GamepadViewModel">
-    <Grid BackgroundColor="#404050" ColumnDefinitions="*,*,*" Margin="10,25,10,10">
+    <Grid BackgroundColor="#282838" ColumnDefinitions="*,*,*" Margin="10,25,10,10">
         
         <!-- D-Pad Column -->
         <Grid Grid.Column="0" RowDefinitions="*,Auto,*">
@@ -45,11 +45,45 @@
         </Grid>
         
         <!-- Select/Start Column -->
-        <Grid Grid.Column="1">
-            <Button x:Name="TestButton"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"
-                    HeightRequest="{Binding Source={x:Reference TestButton}, Path=Width}"></Button>
+        <Grid Grid.Column="1" RowDefinitions="*,*,*,*,*,*">
+            
+            <!-- Background gray boxes -->
+            <BoxView BackgroundColor="#585B81" 
+                     Grid.Row="0"
+                     Margin="7, 0, 7, 7"
+                     CornerRadius="0,0, 15, 15"/>
+            <BoxView BackgroundColor="#585B81"
+                     Grid.Row="1" 
+                     Margin="7"
+                     CornerRadius="15,15, 15, 15"/>
+            <BoxView BackgroundColor="#585B81" 
+                     Grid.Row="2"
+                     Margin="7"
+                     CornerRadius="15,15, 15, 15"/>
+            <BoxView BackgroundColor="#585B81" 
+                     Grid.Row="5"
+                     Margin="7, 7, 7, 0"
+                     CornerRadius="15,15, 0, 0"/>
+            
+            <!-- Select/Start holder -->
+            <Grid Grid.Row="3" Grid.RowSpan="2"
+                  Margin="7">
+                
+                <BoxView BackgroundColor="White" 
+                         Margin="7"
+                         CornerRadius="10"/>
+                
+                <BoxView WidthRequest="150"
+                         HeightRequest="80"
+                         BackgroundColor="White">
+                    <BoxView.Shadow>
+                        <Shadow Brush="Black"
+                                Radius="15"
+                                Opacity="0.8"
+                                Offset="0,4" />
+                    </BoxView.Shadow>
+                </BoxView>
+            </Grid>
         </Grid>
         
         <!-- A / B Buttons Column -->
