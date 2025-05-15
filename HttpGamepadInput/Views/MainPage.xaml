@@ -3,51 +3,103 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:HttpGamepadInput.ViewModels"
              x:Class="HttpGamepadInput.Views.MainPage"
+             Background="White"
              x:DataType="viewModels:GamepadViewModel">
-    
-    <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" HorizontalOptions="Center" ColumnSpacing="30">
-
-        <!-- D-Pad -->
-        <Grid Row="0" Column="0" WidthRequest="80" HeightRequest="80">
-            <BoxView Color="Gray" WidthRequest="20" HeightRequest="60" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <BoxView Color="Gray" WidthRequest="60" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Center"/>
+    <Grid BackgroundColor="#404050" ColumnDefinitions="*,*,*" Margin="10,25,10,10">
+        
+        <!-- D-Pad Column -->
+        <Grid Grid.Column="0" RowDefinitions="*,Auto,*">
+            <!-- D-Pad Column -->
+            <Grid Grid.Row="1" RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*,*">
+                <!-- UP -->
+                <Button x:Name="UpButton" 
+                    Grid.Row="1" Grid.Column="2"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    HeightRequest="{Binding Source={x:Reference UpButton}, Path=Width}"></Button>
+                <!-- Down -->
+                <Button x:Name="DownButton" 
+                    Grid.Row="3" Grid.Column="2"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    HeightRequest="{Binding Source={x:Reference DownButton}, Path=Width}"></Button>
+                <!-- Left -->
+                <Button x:Name="LeftButton"
+                    Grid.Row="2" Grid.Column="1"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    HeightRequest="{Binding Source={x:Reference LeftButton}, Path=Width}"></Button>
+                <!-- Right -->
+                <Button x:Name="RightButton"
+                    Grid.Row="2" Grid.Column="3"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    HeightRequest="{Binding Source={x:Reference RightButton}, Path=Width}"></Button>
+                <!-- Center -->
+                <Button x:Name="CenterButton" 
+                    Grid.Row="2" Grid.Column="2"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    HeightRequest="{Binding Source={x:Reference CenterButton}, Path=Width}"></Button>
+            </Grid>
         </Grid>
-
-        <!-- Select/Start -->
-        <Grid Row="0" Column="1" ColumnSpacing="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-            <VerticalStackLayout HorizontalOptions="Center">
-                <Label Text="SELECT" TextColor="Red" FontSize="10" HorizontalTextAlignment="Center"/>
-                <BoxView Color="DarkGray" WidthRequest="40" HeightRequest="20" CornerRadius="4"/>
-            </VerticalStackLayout>
-            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
-                <Label Text="START" TextColor="Red" FontSize="10" HorizontalTextAlignment="Center"/>
-                <BoxView Color="DarkGray" WidthRequest="40" HeightRequest="20" CornerRadius="4"/>
-            </VerticalStackLayout>
+        
+        <!-- Select/Start Column -->
+        <Grid Grid.Column="1">
+            <Button x:Name="TestButton"
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    HeightRequest="{Binding Source={x:Reference TestButton}, Path=Width}"></Button>
         </Grid>
-
-        <!-- A / B Buttons -->
-        <Grid Row="0" Column="2" ColumnSpacing="10">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
-                <ColumnDefinition Width="Auto"/>
-            </Grid.ColumnDefinitions>
-
-            <!-- B Button -->
-            <VerticalStackLayout HorizontalOptions="Center">
-                <Ellipse WidthRequest="40" HeightRequest="40" Fill="Red"/>
-                <Label Text="B" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center"/>
-            </VerticalStackLayout>
-
-            <!-- A Button -->
-            <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center">
-                <Ellipse WidthRequest="40" HeightRequest="40" Fill="Red"/>
-                <Label Text="A" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center"/>
-            </VerticalStackLayout>
+        
+        <!-- A / B Buttons Column -->
+        <Grid Grid.Column="2">
+            
         </Grid>
-
     </Grid>
+    <!-- <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" HorizontalOptions="Center" ColumnSpacing="30"> -->
+    <!-- -->
+    <!--     ~1~ D-Pad @1@ -->
+    <!--     <Grid Row="0" Column="0" WidthRequest="80" HeightRequest="80"> -->
+    <!--         <BoxView Color="Gray" WidthRequest="20" HeightRequest="60" VerticalOptions="Center" HorizontalOptions="Center"/> -->
+    <!--         <BoxView Color="Gray" WidthRequest="60" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Center"/> -->
+    <!--     </Grid> -->
+    <!-- -->
+    <!--     ~1~ Select/Start @1@ -->
+    <!--     <Grid Row="0" Column="1" ColumnSpacing="10"> -->
+    <!--         <Grid.ColumnDefinitions> -->
+    <!--             <ColumnDefinition Width="Auto"/> -->
+    <!--             <ColumnDefinition Width="Auto"/> -->
+    <!--         </Grid.ColumnDefinitions> -->
+    <!--         <VerticalStackLayout HorizontalOptions="Center"> -->
+    <!--             <Label Text="SELECT" TextColor="Red" FontSize="10" HorizontalTextAlignment="Center"/> -->
+    <!--             <BoxView Color="DarkGray" WidthRequest="40" HeightRequest="20" CornerRadius="4"/> -->
+    <!--         </VerticalStackLayout> -->
+    <!--         <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center"> -->
+    <!--             <Label Text="START" TextColor="Red" FontSize="10" HorizontalTextAlignment="Center"/> -->
+    <!--             <BoxView Color="DarkGray" WidthRequest="40" HeightRequest="20" CornerRadius="4"/> -->
+    <!--         </VerticalStackLayout> -->
+    <!--     </Grid> -->
+    <!-- -->
+    <!--     ~1~ A / B Buttons @1@ -->
+    <!--     <Grid Row="0" Column="2" ColumnSpacing="10"> -->
+    <!--         <Grid.ColumnDefinitions> -->
+    <!--             <ColumnDefinition Width="Auto"/> -->
+    <!--             <ColumnDefinition Width="Auto"/> -->
+    <!--         </Grid.ColumnDefinitions> -->
+    <!-- -->
+    <!--         ~1~ B Button @1@ -->
+    <!--         <VerticalStackLayout HorizontalOptions="Center"> -->
+    <!--             <Ellipse WidthRequest="40" HeightRequest="40" Fill="Red"/> -->
+    <!--             <Label Text="B" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center"/> -->
+    <!--         </VerticalStackLayout> -->
+    <!-- -->
+    <!--         ~1~ A Button @1@ -->
+    <!--         <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center"> -->
+    <!--             <Ellipse WidthRequest="40" HeightRequest="40" Fill="Red"/> -->
+    <!--             <Label Text="A" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center"/> -->
+    <!--         </VerticalStackLayout> -->
+    <!--     </Grid> -->
+    <!-- -->
+    <!-- </Grid> -->
 </ContentPage>
