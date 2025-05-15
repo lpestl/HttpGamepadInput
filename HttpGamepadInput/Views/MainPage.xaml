@@ -73,16 +73,7 @@
                          Margin="7"
                          CornerRadius="10"/>
                 
-                <BoxView WidthRequest="150"
-                         HeightRequest="80"
-                         BackgroundColor="White">
-                    <BoxView.Shadow>
-                        <Shadow Brush="Black"
-                                Radius="15"
-                                Opacity="0.8"
-                                Offset="0,4" />
-                    </BoxView.Shadow>
-                </BoxView>
+                
             </Grid>
         </Grid>
         
