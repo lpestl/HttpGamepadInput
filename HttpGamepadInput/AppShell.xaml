@@ -3,13 +3,13 @@
     x:Class="HttpGamepadInput.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:HttpGamepadInput"
+    xmlns:views="clr-namespace:HttpGamepadInput.Views"
     Shell.FlyoutBehavior="Flyout"
-    Title="HttpGamepadInput">
+    Title="Gamepad Input via HTTP">
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        Title="Gamepad"
+        ContentTemplate="{DataTemplate views:MainPage}"
         Route="MainPage" />
 
 </Shell>
