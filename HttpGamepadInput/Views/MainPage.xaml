@@ -56,10 +56,31 @@
                      Grid.Row="1" 
                      Margin="7"
                      CornerRadius="15,15, 15, 15"/>
-            <BoxView BackgroundColor="#585B81" 
-                     Grid.Row="2"
-                     Margin="7"
-                     CornerRadius="15,15, 15, 15"/>
+            
+            <Grid Grid.Row="2" ColumnDefinitions="*,*">
+                <BoxView BackgroundColor="#585B81"
+                         Grid.Column="0" Grid.ColumnSpan="2"
+                         Margin="7"
+                         CornerRadius="15"/>
+                
+                <Label x:Name="SelectLabel"
+                       Text="SELECT"
+                       VerticalOptions="Center"
+                       Grid.Column="0"
+                       TextColor="Red"
+                       FontSize="12"
+                       HorizontalTextAlignment="Center"/>
+                
+                <Label x:Name="StartLabel"
+                       Grid.Column="1"
+                       Text="START"
+                       VerticalOptions="Center"
+                       TextColor="Red"
+                       FontSize="12"
+                       HorizontalTextAlignment="Center"/>
+                
+            </Grid>
+            
             <BoxView BackgroundColor="#585B81" 
                      Grid.Row="5"
                      Margin="7, 7, 7, 0"
@@ -78,6 +99,7 @@
                             Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
                             HorizontalOptions="Fill"
                             VerticalOptions="Fill"
+                            SizeChanged="SelectButton_OnSizeChanged"
                             BackgroundColor="#252525"
                             CornerRadius="15">
                         <Button.Shadow>
@@ -102,6 +124,7 @@
                             Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="2"
                             HorizontalOptions="Fill"
                             VerticalOptions="Fill"
+                            SizeChanged="StartButton_OnSizeChanged"
                             BackgroundColor="#252525"
                             CornerRadius="15">
                         <Button.Shadow>
@@ -158,7 +181,7 @@
                             HorizontalOptions="Fill"
                             VerticalOptions="Fill"
                             Text=""
-                            SizeChanged="Button_OnSizeChanged"
+                            SizeChanged="BButton_OnSizeChanged"
                             BackgroundColor="Red">
                         <Button.Shadow>
                             <Shadow Brush="Black"
@@ -196,7 +219,7 @@
                             HorizontalOptions="Fill"
                             VerticalOptions="Fill"
                             Text=""
-                            SizeChanged="Button_OnSizeChanged"
+                            SizeChanged="AButton_OnSizeChanged"
                             BackgroundColor="Red">
                         <Button.Shadow>
                             <Shadow Brush="Black"
@@ -217,6 +240,21 @@
                     </Button>
                     
                 </Grid>
+                
+                <Label Grid.Row="4" Grid.Column="1"
+                       x:Name="BLabel"
+                       Text="B" 
+                       TextColor="Red" 
+                       FontSize="12" 
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="End"/>
+                <Label Grid.Row="4" Grid.Column="3"
+                       x:Name="ALabel"
+                       Text="A" 
+                       TextColor="Red" 
+                       FontSize="12" 
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="End"/>
             </Grid>
         </Grid>
     </Grid>
