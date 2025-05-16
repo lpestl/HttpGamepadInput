@@ -9,4 +9,12 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
     }
+
+    private void Button_OnSizeChanged(object? sender, EventArgs e)
+    {
+        if (sender is Button button)
+        {
+            button.CornerRadius = (int)(button.Width / 2);
+        }
+    }
 }

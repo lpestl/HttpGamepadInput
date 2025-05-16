@@ -66,65 +66,158 @@
                      CornerRadius="15,15, 0, 0"/>
             
             <!-- Select/Start holder -->
-            <Grid Grid.Row="3" Grid.RowSpan="2"
-                  Margin="7">
+            <Grid Grid.Row="3" Grid.RowSpan="2">
                 
                 <BoxView BackgroundColor="White" 
                          Margin="7"
                          CornerRadius="10"/>
                 
+                <Grid ColumnDefinitions="*,*,*,*,*,*,*,*" RowDefinitions="*,*,*" Margin="17">
+                    <!-- Select button -->
+                    <Button x:Name="SelectButton"
+                            Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            BackgroundColor="#252525"
+                            CornerRadius="15">
+                        <Button.Shadow>
+                            <Shadow Brush="Black"
+                                    Radius="15"
+                                    Opacity="0.8"
+                                    Offset="0,4"></Shadow>
+                        </Button.Shadow>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="Black" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                    <!-- Start button -->
+                    <Button x:Name="StartButton"
+                            Grid.Row="1" Grid.Column="5" Grid.ColumnSpan="2"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            BackgroundColor="#252525"
+                            CornerRadius="15">
+                        <Button.Shadow>
+                            <Shadow Brush="Black"
+                                    Radius="15"
+                                    Opacity="0.8"
+                                    Offset="0,4"></Shadow>
+                        </Button.Shadow>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="Black" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                </Grid>
                 
             </Grid>
         </Grid>
         
         <!-- A / B Buttons Column -->
-        <Grid Grid.Column="2">
-            
+        <Grid Grid.Column="2" RowDefinitions="*,Auto,*">
+            <Grid Grid.Row="1" RowDefinitions="0.4*,*,0.2*,*,0.4*" ColumnDefinitions="0.3*,*,0.2*,*,0.3*">
+                <!-- B Turbo Holder -->
+                <Grid Grid.Row="3" Grid.Column="1"
+                      HorizontalOptions="Fill"
+                      VerticalOptions="Fill"
+                      HeightRequest="{Binding Source={x:Reference BHolderBox}, Path=Width}">
+                </Grid>
+                <!-- A Turbo Holder -->
+                <Grid Grid.Row="1" Grid.Column="3"
+                      HorizontalOptions="Fill"
+                      VerticalOptions="Fill"
+                      HeightRequest="{Binding Source={x:Reference AHolderBox}, Path=Width}">
+                </Grid>
+                
+                <!-- B Button Holder -->
+                <Grid Grid.Row="3" Grid.Column="1">
+                    <BoxView x:Name="BHolderBox"
+                             BackgroundColor="White" 
+                             Margin="7"
+                             HorizontalOptions="Fill"
+                             VerticalOptions="Fill"
+                             CornerRadius="10"
+                             HeightRequest="{Binding Source={x:Reference BHolderBox}, Path=Width}"/>
+                    <!-- B button -->
+                    <Button x:Name="BButton" 
+                            CornerRadius="50"
+                            Margin="25"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            Text=""
+                            SizeChanged="Button_OnSizeChanged"
+                            BackgroundColor="Red">
+                        <Button.Shadow>
+                            <Shadow Brush="Black"
+                                    Radius="10"
+                                    Offset="4,4"
+                                    Opacity="0.5"/>
+                        </Button.Shadow>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="DarkRed" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                </Grid>
+                
+                <!-- A Button Holder -->
+                <Grid Grid.Row="3" Grid.Column="3">
+                    <BoxView x:Name="AHolderBox"
+                             BackgroundColor="White" 
+                             Margin="7"
+                             HorizontalOptions="Fill"
+                             VerticalOptions="Fill"
+                             CornerRadius="10"
+                             HeightRequest="{Binding Source={x:Reference AHolderBox}, Path=Width}"/>
+                    
+                    <!-- A button -->
+                    <Button x:Name="AButton" 
+                            CornerRadius="50"
+                            Margin="25"
+                            HorizontalOptions="Fill"
+                            VerticalOptions="Fill"
+                            Text=""
+                            SizeChanged="Button_OnSizeChanged"
+                            BackgroundColor="Red">
+                        <Button.Shadow>
+                            <Shadow Brush="Black"
+                                    Radius="10"
+                                    Offset="4,4"
+                                    Opacity="0.5"/>
+                        </Button.Shadow>
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="CommonStates">
+                                <VisualState Name="Normal" />
+                                <VisualState Name="Pressed">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="DarkRed" />
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Button>
+                    
+                </Grid>
+            </Grid>
         </Grid>
     </Grid>
-    <!-- <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" HorizontalOptions="Center" ColumnSpacing="30"> -->
-    <!-- -->
-    <!--     ~1~ D-Pad @1@ -->
-    <!--     <Grid Row="0" Column="0" WidthRequest="80" HeightRequest="80"> -->
-    <!--         <BoxView Color="Gray" WidthRequest="20" HeightRequest="60" VerticalOptions="Center" HorizontalOptions="Center"/> -->
-    <!--         <BoxView Color="Gray" WidthRequest="60" HeightRequest="20" VerticalOptions="Center" HorizontalOptions="Center"/> -->
-    <!--     </Grid> -->
-    <!-- -->
-    <!--     ~1~ Select/Start @1@ -->
-    <!--     <Grid Row="0" Column="1" ColumnSpacing="10"> -->
-    <!--         <Grid.ColumnDefinitions> -->
-    <!--             <ColumnDefinition Width="Auto"/> -->
-    <!--             <ColumnDefinition Width="Auto"/> -->
-    <!--         </Grid.ColumnDefinitions> -->
-    <!--         <VerticalStackLayout HorizontalOptions="Center"> -->
-    <!--             <Label Text="SELECT" TextColor="Red" FontSize="10" HorizontalTextAlignment="Center"/> -->
-    <!--             <BoxView Color="DarkGray" WidthRequest="40" HeightRequest="20" CornerRadius="4"/> -->
-    <!--         </VerticalStackLayout> -->
-    <!--         <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center"> -->
-    <!--             <Label Text="START" TextColor="Red" FontSize="10" HorizontalTextAlignment="Center"/> -->
-    <!--             <BoxView Color="DarkGray" WidthRequest="40" HeightRequest="20" CornerRadius="4"/> -->
-    <!--         </VerticalStackLayout> -->
-    <!--     </Grid> -->
-    <!-- -->
-    <!--     ~1~ A / B Buttons @1@ -->
-    <!--     <Grid Row="0" Column="2" ColumnSpacing="10"> -->
-    <!--         <Grid.ColumnDefinitions> -->
-    <!--             <ColumnDefinition Width="Auto"/> -->
-    <!--             <ColumnDefinition Width="Auto"/> -->
-    <!--         </Grid.ColumnDefinitions> -->
-    <!-- -->
-    <!--         ~1~ B Button @1@ -->
-    <!--         <VerticalStackLayout HorizontalOptions="Center"> -->
-    <!--             <Ellipse WidthRequest="40" HeightRequest="40" Fill="Red"/> -->
-    <!--             <Label Text="B" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center"/> -->
-    <!--         </VerticalStackLayout> -->
-    <!-- -->
-    <!--         ~1~ A Button @1@ -->
-    <!--         <VerticalStackLayout Grid.Column="1" HorizontalOptions="Center"> -->
-    <!--             <Ellipse WidthRequest="40" HeightRequest="40" Fill="Red"/> -->
-    <!--             <Label Text="A" TextColor="Red" FontSize="12" HorizontalTextAlignment="Center"/> -->
-    <!--         </VerticalStackLayout> -->
-    <!--     </Grid> -->
-    <!-- -->
-    <!-- </Grid> -->
 </ContentPage>
