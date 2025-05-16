@@ -11,36 +11,117 @@
         <Grid Grid.Column="0" RowDefinitions="*,Auto,*">
             <!-- D-Pad Column -->
             <Grid Grid.Row="1" RowDefinitions="*,*,*,*,*" ColumnDefinitions="*,*,*,*,*">
+                
+                <BoxView BackgroundColor="White"
+                         Grid.Row="1" Grid.Column="2" Grid.RowSpan="3"
+                         CornerRadius="10"/>
+                <BoxView BackgroundColor="White"
+                         Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+                         CornerRadius="10"/>
+                <BoxView BackgroundColor="#252525"
+                         Grid.Row="1" Grid.Column="2" Grid.RowSpan="3"
+                         Margin="10"
+                         CornerRadius="10"/>
+                <BoxView BackgroundColor="#252525"
+                         Margin="10"
+                         Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3"
+                         CornerRadius="10"/>
+                
                 <!-- UP -->
-                <Button x:Name="UpButton" 
-                    Grid.Row="1" Grid.Column="2"
-                    HorizontalOptions="Fill"
-                    VerticalOptions="Fill"
-                    HeightRequest="{Binding Source={x:Reference UpButton}, Path=Width}"></Button>
+                <Button x:Name="UpButton"
+                        BackgroundColor="#252525"
+                        Margin="10,10,10,0"
+                        Grid.Row="1" Grid.Column="2"
+                        HorizontalOptions="Fill"
+                        VerticalOptions="Fill"
+                        HeightRequest="{Binding Source={x:Reference UpButton}, Path=Width}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup Name="CommonStates">
+                            <VisualState Name="Normal" />
+                            <VisualState Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
                 <!-- Down -->
                 <Button x:Name="DownButton" 
                     Grid.Row="3" Grid.Column="2"
+                    BackgroundColor="#252525"
+                    Margin="10,0,10,10"
                     HorizontalOptions="Fill"
                     VerticalOptions="Fill"
-                    HeightRequest="{Binding Source={x:Reference DownButton}, Path=Width}"></Button>
+                    HeightRequest="{Binding Source={x:Reference DownButton}, Path=Width}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup Name="CommonStates">
+                            <VisualState Name="Normal" />
+                            <VisualState Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
                 <!-- Left -->
                 <Button x:Name="LeftButton"
                     Grid.Row="2" Grid.Column="1"
+                    BackgroundColor="#252525"
+                    Margin="10,10,0,10"
                     HorizontalOptions="Fill"
                     VerticalOptions="Fill"
-                    HeightRequest="{Binding Source={x:Reference LeftButton}, Path=Width}"></Button>
+                    HeightRequest="{Binding Source={x:Reference LeftButton}, Path=Width}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup Name="CommonStates">
+                            <VisualState Name="Normal" />
+                            <VisualState Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
                 <!-- Right -->
                 <Button x:Name="RightButton"
-                    Grid.Row="2" Grid.Column="3"
+                    Grid.Row="2" Grid.Column="3" 
+                    BackgroundColor="#252525"
+                    Margin="0,10,10,10"
                     HorizontalOptions="Fill"
                     VerticalOptions="Fill"
-                    HeightRequest="{Binding Source={x:Reference RightButton}, Path=Width}"></Button>
+                    HeightRequest="{Binding Source={x:Reference RightButton}, Path=Width}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup Name="CommonStates">
+                            <VisualState Name="Normal" />
+                            <VisualState Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
                 <!-- Center -->
                 <Button x:Name="CenterButton" 
                     Grid.Row="2" Grid.Column="2"
+                    BackgroundColor="#252525"
+                    Margin="10"
                     HorizontalOptions="Fill"
                     VerticalOptions="Fill"
-                    HeightRequest="{Binding Source={x:Reference CenterButton}, Path=Width}"></Button>
+                    HeightRequest="{Binding Source={x:Reference CenterButton}, Path=Width}">
+                    <VisualStateManager.VisualStateGroups>
+                        <VisualStateGroup Name="CommonStates">
+                            <VisualState Name="Normal" />
+                            <VisualState Name="Pressed">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Black" />
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateManager.VisualStateGroups>
+                </Button>
             </Grid>
         </Grid>
         
