@@ -10,6 +10,16 @@ public partial class MainPage : ContentPage
         InitializeComponent();
     }
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (Preferences.ContainsKey("ServerUrl"))
+        {
+            ViewModel.ServerUrl = Preferences.Get("ServerUrl", string.Empty);
+        }
+    }
+    
     private void AButton_OnSizeChanged(object? sender, EventArgs e)
     {
         var command = ViewModel.UpButtonPressedCommand;
