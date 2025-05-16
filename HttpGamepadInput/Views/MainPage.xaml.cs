@@ -12,6 +12,7 @@ public partial class MainPage : ContentPage
 
     private void AButton_OnSizeChanged(object? sender, EventArgs e)
     {
+        var command = ViewModel.UpButtonPressedCommand;
         if (sender is Button button)
         {
             button.CornerRadius = (int)(button.Width / 2);

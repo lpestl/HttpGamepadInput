@@ -2,9 +2,15 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewModels="clr-namespace:HttpGamepadInput.ViewModels"
+             xmlns:base="clr-namespace:HttpGamepadInput.BaseClasses"
              x:Class="HttpGamepadInput.Views.MainPage"
              Background="White"
              x:DataType="viewModels:GamepadViewModel">
+    
+    <ContentPage.BindingContext>
+        <viewModels:GamepadViewModel />
+    </ContentPage.BindingContext>
+    
     <Grid BackgroundColor="#282838" ColumnDefinitions="*,*,*" Margin="10,25,10,10">
         
         <!-- D-Pad Column -->
@@ -45,6 +51,11 @@
                             </VisualState>
                         </VisualStateGroup>
                     </VisualStateManager.VisualStateGroups>
+                    <Button.Behaviors>
+                        <base:ButtonPressBehavior
+                            PressedCommand="{Binding UpButtonPressedCommand}"
+                            ReleasedCommand="{Binding UpButtonReleasedCommand}"/>
+                    </Button.Behaviors>
                 </Button>
                 <!-- Down -->
                 <Button x:Name="DownButton" 
@@ -64,6 +75,11 @@
                             </VisualState>
                         </VisualStateGroup>
                     </VisualStateManager.VisualStateGroups>
+                    <Button.Behaviors>
+                        <base:ButtonPressBehavior
+                            PressedCommand="{Binding DownButtonPressedCommand}"
+                            ReleasedCommand="{Binding DownButtonReleasedCommand}"/>
+                    </Button.Behaviors>
                 </Button>
                 <!-- Left -->
                 <Button x:Name="LeftButton"
@@ -83,6 +99,11 @@
                             </VisualState>
                         </VisualStateGroup>
                     </VisualStateManager.VisualStateGroups>
+                    <Button.Behaviors>
+                        <base:ButtonPressBehavior
+                            PressedCommand="{Binding LeftButtonPressedCommand}"
+                            ReleasedCommand="{Binding LeftButtonReleasedCommand}"/>
+                    </Button.Behaviors>
                 </Button>
                 <!-- Right -->
                 <Button x:Name="RightButton"
@@ -102,6 +123,11 @@
                             </VisualState>
                         </VisualStateGroup>
                     </VisualStateManager.VisualStateGroups>
+                    <Button.Behaviors>
+                        <base:ButtonPressBehavior
+                            PressedCommand="{Binding RightButtonPressedCommand}"
+                            ReleasedCommand="{Binding RightButtonReleasedCommand}"/>
+                    </Button.Behaviors>
                 </Button>
                 <!-- Center -->
                 <Button x:Name="CenterButton" 
@@ -121,6 +147,11 @@
                             </VisualState>
                         </VisualStateGroup>
                     </VisualStateManager.VisualStateGroups>
+                    <Button.Behaviors>
+                        <base:ButtonPressBehavior
+                            PressedCommand="{Binding CenterButtonPressedCommand}"
+                            ReleasedCommand="{Binding CenterButtonReleasedCommand}"/>
+                    </Button.Behaviors>
                 </Button>
             </Grid>
         </Grid>
@@ -199,6 +230,11 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
+                        <Button.Behaviors>
+                            <base:ButtonPressBehavior
+                                PressedCommand="{Binding SelectButtonPressedCommand}"
+                                ReleasedCommand="{Binding SelectButtonReleasedCommand}"/>
+                        </Button.Behaviors>
                     </Button>
                     <!-- Start button -->
                     <Button x:Name="StartButton"
@@ -224,6 +260,11 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
+                        <Button.Behaviors>
+                            <base:ButtonPressBehavior
+                                PressedCommand="{Binding StartButtonPressedCommand}"
+                                ReleasedCommand="{Binding StartButtonReleasedCommand}"/>
+                        </Button.Behaviors>
                     </Button>
                 </Grid>
                 
@@ -280,6 +321,11 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
+                        <Button.Behaviors>
+                            <base:ButtonPressBehavior
+                                PressedCommand="{Binding BButtonPressedCommand}"
+                                ReleasedCommand="{Binding BButtonReleasedCommand}"/>
+                        </Button.Behaviors>
                     </Button>
                 </Grid>
                 
@@ -318,6 +364,11 @@
                                 </VisualState>
                             </VisualStateGroup>
                         </VisualStateManager.VisualStateGroups>
+                        <Button.Behaviors>
+                            <base:ButtonPressBehavior
+                                PressedCommand="{Binding AButtonPressedCommand}"
+                                ReleasedCommand="{Binding AButtonReleasedCommand}"/>
+                        </Button.Behaviors>
                     </Button>
                     
                 </Grid>
