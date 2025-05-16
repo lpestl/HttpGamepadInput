@@ -5,6 +5,7 @@
              xmlns:base="clr-namespace:HttpGamepadInput.BaseClasses"
              x:Class="HttpGamepadInput.Views.MainPage"
              Background="White"
+             Shell.NavBarIsVisible="False"
              x:DataType="viewModels:GamepadViewModel">
     
     <ContentPage.BindingContext>

@@ -5,11 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:HttpGamepadInput.Views"
     Shell.FlyoutBehavior="Flyout"
+    Shell.NavBarIsVisible="False"
     Title="Gamepad Input via HTTP">
 
-    <ShellContent
-        Title="Gamepad"
-        ContentTemplate="{DataTemplate views:MainPage}"
-        Route="MainPage" />
-
+    <FlyoutItem Title="Gamepads">
+        <ShellContent ContentTemplate="{DataTemplate views:MainPage}"
+                      Title="1 Gamepad"
+                      Route="MainPage" />
+    </FlyoutItem>
+    <FlyoutItem Title="Settings">
+        <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}"
+                      Title="Settings"
+                      Route="Settings" />
+    </FlyoutItem>
 </Shell>

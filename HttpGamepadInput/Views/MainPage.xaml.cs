@@ -4,7 +4,7 @@ namespace HttpGamepadInput.Views;
 
 public partial class MainPage : ContentPage
 {
-    public GamepadViewModel ViewModel => (GamepadViewModel)BindingContext;
+    private GamepadViewModel ViewModel => (GamepadViewModel) BindingContext;
     public MainPage()
     {
         InitializeComponent();
