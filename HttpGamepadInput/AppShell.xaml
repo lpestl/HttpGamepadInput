@@ -9,7 +9,7 @@
 
     <FlyoutItem Title="Gamepads">
         <ShellContent ContentTemplate="{DataTemplate views:MainPage}"
-                      Title="1 Gamepad"
+                      Title="HTTP Gamepad"
                       Route="MainPage" />
     </FlyoutItem>
     <FlyoutItem Title="Settings">
